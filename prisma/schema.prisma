@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(cuid())
+  name String
+  email String @unique
+  password String?
+  role String @default("user")// user || admin
+
+  journals Journal[]
+  itineraries Itinerary[]
+  sessions Session[]
+}
+
+model Session {
+  id String @id @default(cuid())
+  
+  // relation
+  userId String
+  user User @relation(fields: [userId], references: [id])
+}
+
+model Journal {
+  id String @id @default(cuid())
+  title String
+  content String
+  destination String
+  startDate DateTime
+  endDate DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  isPublic Boolean @default(true)
+  isDeleted Boolean @default(false)
+  totalExpense Decimal? // bener nggak ya decimal
+  image String?
+  
+  // relation
+  authorId String
+  author User @relation(fields: [authorId], references: [id])
+}
+
+model Itinerary {
+  id String @id @default(cuid())
+  title String
+  notes String
+  destination String
+  startDate DateTime
+  endDate DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  // isPublic Boolean @default(true) //itinerary is private
+  isDeleted Boolean @default(false)
+  totalBudget Decimal? // bener nggak ya decimal
+  image String?
+  
+  // relation
+  authorId String
+  author User @relation(fields: [authorId], references: [id])
+}
