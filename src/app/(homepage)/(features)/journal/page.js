@@ -10,7 +10,7 @@ export default function JournalPage() {
           <Link
             key={country.id}
             href={`/journal/${country.id}`}
-            className="group block h-[400px] rounded-[40px] overflow-hidden shadow-md hover:shadow-lg border border-transparent hover:border-blue-500 transition-all"
+            className="group block h-[400px] rounded-[40px] overflow-hidden shadow-md hover:shadow-lg transition-all"
           >
             <div className="relative w-full h-[300px]">
               <Image
