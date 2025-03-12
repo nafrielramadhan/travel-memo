@@ -10,7 +10,7 @@ export default async function layout({ children }) {
   return (
     <div>
       <Navbar isLogin={isLogin} />
-      <div className="flex max-h-screen bg-[#FAFAFA]">
+      <div className="flex max-h-screen overflow-hidden bg-[#FAFAFA]">
         <div className="p-5 mx-auto w-full">{children}</div>
       </div>
     </div>
