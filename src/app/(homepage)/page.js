@@ -1,44 +1,45 @@
 import Link from "next/link";
-
+import Image from "next/image";
 import TypedComponent from "./components/typed";
 
-// bingung deh, kalau belum login kan -> ke page yg landing page
-// tp kalau udah login, ini harusnya langsung ke -> home page
-
-export default async function Page() {
+export default function Page() {
   return (
-    <main className="flex flex-col items-center justify-center fixed inset-0 text-center space-y-8">
-      {/* Section: judul di atas */}
-      <section className="space-y-8">
-        <h1 className="text-5xl font-light text-gray-900">
-          <TypedComponent />
+    <main className="flex items-center justify-center h-fit px-10">
+      {/* Left: Text Content */}
+      <section className="w-1/2 space-y-6 ml-[100px] ">
+        <h1 className="text-[65px] font-bold text-gray-900 leading-tight mt-[50px]">
+          Capture, Plan, <br /> and Share Your <br /> Adventures!
         </h1>
-        <h4 className="text-3xl font-bold text-gray-900">
-          Write down your travel journal & Prepare your itinerary!
-        </h4>
-        <p className="text-xl text-gray-600">
-          Share and read our memorable travel experience.
+        <p className="text-[28px] text-gray-700">
+          <span className="font-semibold">Your travel buddy</span> for turning memories into stories!
         </p>
-      </section>
 
-      {/* Section: 2 button dibawah */}
-      <section className="flex justify-center space-x-4">
-        <div>
+        {/* Buttons */}
+        <div className="flex space-x-4">
           <Link
             href="/journal"
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700"
+            className="bg-black text-white px-6 py-3 rounded-[25px] font-semibold hover:bg-gray-900"
           >
-            Start Reading Journal
+            Explore Journals
           </Link>
-        </div>
-        <div>
           <Link
             href="/itinerary/create"
-            className="border-2 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100"
+            className="border-[2px] border-black text-black px-6 py-3 rounded-[25px] font-semibold hover:bg-gray-100"
           >
-            Prepare my itinerary
+            Create Itinerary
           </Link>
         </div>
+      </section>
+
+      {/* Right: Image */}
+      <section className="w-1/2 flex justify-center">
+        <Image
+          src="/travel-stamps.png"
+          alt="Travel Stamps"
+          width={700}
+          height={500}
+          className="max-w-none -mr-[250px] mt-[100px]"
+        />
       </section>
     </main>
   );
