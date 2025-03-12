@@ -16,6 +16,7 @@ export default function Navbar({ isLogin }) {
         <Link href={"/"} className="hover:text-blue-500">
           Travel Memo
         </Link>
+        <Avatar name="Nafriel ramadhan" variant="marble" />
       </h1>
       {!isLogin && (
         <div className="flex gap-x-[63px]">   
