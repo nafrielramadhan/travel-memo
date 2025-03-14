@@ -20,10 +20,21 @@ input {
   @apply border p-2 rounded-lg border-slate-300 shadow-sm w-full;
 }
 
+select {
+  @apply border p-2 rounded-lg border-slate-300 shadow-sm w-full;
+}
+
 button {
   @apply bg-black p-2 rounded-lg text-white shadow-sm w-full hover:opacity-75;
 }
 
+.ql-container {
+  font-size: 28px !important;
+}
+
+.quill > .ql-container > .ql-editor.ql-blank::before {
+  color: #b3b3b1;
+}
 /* 
 * {
   padding: 0;

@@ -51,5 +51,5 @@ export async function loginAction(_, formData) {
     secure: process.env.NODE_ENV === "production",
   });
 
-  redirect("/");
+  redirect("/journal");
 }

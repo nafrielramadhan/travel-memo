@@ -68,7 +68,7 @@ export async function GET(request) {
     sameSite: "lax",
   });
 
-  redirect("/discover");
+  redirect("/journal");
 }
 
 /**

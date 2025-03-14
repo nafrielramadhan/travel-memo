@@ -10,9 +10,10 @@ export default function Page() {
         <h1 className="text-[65px] font-bold text-gray-900 leading-tight mt-[50px]">
           Capture, Plan, <br /> and Share Your <br /> Adventures!
         </h1>
-        <p className="text-[28px] text-gray-700">
-          <span className="font-semibold">Your travel buddy</span> for turning memories into stories!
-        </p>
+        <div className="text-[27px] text-gray-700 flex items-center ">
+          <span className="font-semibold">Your travel buddy&nbsp;</span>
+          <TypedComponent />
+        </div>
 
         {/* Buttons */}
         <div className="flex space-x-4">

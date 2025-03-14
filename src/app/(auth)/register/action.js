@@ -38,7 +38,6 @@ export async function registerAction(_, formData) {
       name,
       email,
       password: hashedPassword,
-      avatarUrl,
     },
   });
 

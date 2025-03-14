@@ -9,9 +9,13 @@ export default function TypedComponent() {
   useEffect(() => {
     // Initialize Typed.js
     const typed = new Typed(el.current, {
-      strings: ["Travel Memo", "Your everyday buddy for traveling!"],
+      strings: [
+        "for turning memories into stories!",
+        "for making trip planning easy!",
+        "for exploring new destinations!",
+      ],
       typeSpeed: 60,
-      backSpeed: 30,
+      backSpeed: 40,
       loop: true,
     });
 
