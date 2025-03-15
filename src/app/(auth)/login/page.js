@@ -28,7 +28,7 @@ export default function Page() {
             name="email"
             variant="underlined"
             placeholder="Enter your email"
-            className="min-w-64"
+            className="normalInput min-w-64"
           />
           <Input
             label="Password"
@@ -36,10 +36,10 @@ export default function Page() {
             name="password"
             variant="underlined"
             placeholder="********"
-            className="min-w-64"
+            className="normalInput min-w-64"
           />
           <Button
-            className="w-full bg-cyan-700 text-white font-semibold"
+            className="normalButton w-full bg-cyan-700 text-white font-semibold`"
             radius="lg"
             type="submit"
             isDisabled={pending}

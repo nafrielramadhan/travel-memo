@@ -13,7 +13,7 @@ export const OauthGoogleButton = () => {
   return (
     <form action={formAction}>
       <Button
-        className="w-full flex items-center justify-center gap-2"
+        className="normalButton w-full flex items-center justify-center gap-2"
         variant="bordered"
         type="submit"
         isDisabled={pending}

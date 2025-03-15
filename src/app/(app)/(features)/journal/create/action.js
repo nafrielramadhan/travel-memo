@@ -1,19 +1,18 @@
 "use server";
 
 import { auth } from "@/libs/auth";
-// import { uploadFile } from "@/libs/file-ops"; // BELUM BELAJAR
+import { uploadFile } from "@/libs/file-ops";
 import { prisma } from "@/utils/prisma";
 import { redirect } from "next/navigation";
 
 export async function createJournalAction(_, formData) {
   const title = formData.get("title");
-  const content = formData.get("content");
-  const destination = formData.get("destination");
+  const content = formData.get("content"); // ✅ Pastikan ini dari input hidden
+  const country = formData.get("country");
+  const city = formData.get("city");
   const startDate = new Date(formData.get("startDate"));
   const endDate = new Date(formData.get("endDate"));
-  // createdAt, updatedAt, isPublic, isDeleted? kayaknya yg perlu isPublic aja sih(jadi ada check mau private or public)
-  const isPublic = formData.get("isPublic") === "true"; // BENER GA NIH
-  const totalExpense = formData.get("totalExpense");
+  const totalExpense = formData.get("totalExpense"); // ini kan decimal, perlu diconvert kah?
   const image = formData.get("image");
 
   const session = await auth();
@@ -21,10 +20,19 @@ export async function createJournalAction(_, formData) {
     redirect("/login");
   }
 
-  if (!title || !content || !destination || !startDate || !endDate) {
+  if (
+    !title ||
+    !content ||
+    !country ||
+    !city ||
+    !startDate ||
+    !endDate ||
+    !totalExpense ||
+    !image
+  ) {
     return {
       success: false,
-      message: "Title, content, destination, and Dates need to be filled!",
+      message: "All required fields must be filled!",
     };
   }
 
@@ -32,20 +40,18 @@ export async function createJournalAction(_, formData) {
     data: {
       title,
       content,
-      destination,
+      country,
+      city,
       startDate,
       endDate,
-      isPublic,
-      totalExpense: totalExpense ? parseFloat(totalExpense) : null,
+      totalExpense,
       image: image.size !== 0 ? image.name : "",
       authorId: session.userId,
     },
   });
+  console.log("Journal created:", newJournal);
 
   await uploadFile({ key: image.name, folder: newJournal.id, body: image });
 
-  return {
-    success: true,
-    message: "Journal successfully created",
-  };
+  return { success: true, message: "Your journal successfully published!" };
 }

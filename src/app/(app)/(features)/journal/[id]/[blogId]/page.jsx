@@ -5,7 +5,9 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 export default function BlogDetailPage({ params }) {
-  const blog = blogs.find((b) => b.id === params.blogId && b.countryId === params.id);
+  const blog = blogs.find(
+    (b) => b.id === params.blogId && b.countryId === params.id
+  );
 
   if (!blog) {
     return notFound();
@@ -17,7 +19,13 @@ export default function BlogDetailPage({ params }) {
       <p className="text-[30px] text-black mb-[16px] ">{blog.countryId}</p>
 
       <div className="flex items-center gap-3 mt-4">
-        <Image src={blog.authorImage} alt={blog.author} width={32} height={32} className="rounded-full" />
+        <Image
+          src={blog.authorImage}
+          alt={blog.author}
+          width={32}
+          height={32}
+          className="rounded-full"
+        />
         <span className="text-gray-500">{blog.author}</span>
         <span className="text-gray-400 text-sm">{blog.date}</span>
       </div>
@@ -25,11 +33,18 @@ export default function BlogDetailPage({ params }) {
       <hr className="my-6 border-[#D9D9D9]" />
 
       <div className="relative w-full h-[400px] rounded-[60px] overflow-hidden shadow-md">
-        <Image src={blog.image} alt={blog.title} layout="fill" objectFit="cover" />
+        <Image
+          src={blog.image}
+          alt={blog.title}
+          layout="fill"
+          objectFit="cover"
+        />
       </div>
 
       <article className="mt-6 leading-relaxed text-justify text-lg">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>{blog.content}</ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          {blog.content}
+        </ReactMarkdown>
       </article>
     </main>
   );

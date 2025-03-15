@@ -18,7 +18,7 @@
   position: relative;
 }
 
-.button,
+/* .button,
 .addButton {
   width: 36px;
   height: 36px;
@@ -29,9 +29,9 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-}
+} */
 
-.addButton {
+/* .addButton {
   border-color: #1a8917;
 }
 
@@ -43,16 +43,14 @@
   z-index: 999;
   width: 100%;
   left: 50px;
-}
+} */
 
 .input {
-  padding: 50px !important;
-  font-size: 64px !important;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-  background-color: transparent !important;
-  color: var(--textColor) !important;
+  padding: 0px;
+  font-size: 50px;
+  outline: none;
+  background-color: transparent;
+  color: var(--textColor);
 }
 
 .input::placeholder {
@@ -62,7 +60,7 @@
 .textArea {
   width: 100%;
 }
-
+/* 
 .publish {
   position: absolute;
   top: 0px;
@@ -73,4 +71,4 @@
   color: white;
   cursor: pointer;
   border-radius: 20px;
-}
+} */

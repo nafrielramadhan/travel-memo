@@ -12,8 +12,6 @@ model User {
   name String
   email String @unique
   password String?
-  // avatarUrl String?
-  // role String @default("user")// user || admin
 
   journals Journal[]
   itineraries Itinerary[]
@@ -32,13 +30,11 @@ model Journal {
   id String @id @default(cuid())
   title String
   content String
-  destination String
+  country String
+  city String
   startDate DateTime
   endDate DateTime
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  // isPublished Boolean // @default(false) // jadi kalau belum publish, dia masih di draft!
-  isPublic Boolean @default(false)
   isDeleted Boolean @default(false)
   totalExpense Decimal? // bener nggak ya decimal
   image String?
@@ -53,12 +49,11 @@ model Itinerary {
   id String @id @default(cuid())
   title String
   content String
-  destination String
+  country String
+  city String
   startDate DateTime
   endDate DateTime
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  // isPublic Boolean @default(true) //itinerary is private
   isDeleted Boolean @default(false)
   totalBudget Decimal? // bener nggak ya decimal
   image String?

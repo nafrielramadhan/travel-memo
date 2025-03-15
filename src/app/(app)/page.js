@@ -4,10 +4,10 @@ import TypedComponent from "./components/typed";
 
 export default function Page() {
   return (
-    <main className="flex items-center justify-center h-fit px-10">
+    <main className="flex items-center justify-center h-[calc(100vh-140px)] px-10">
       {/* Left: Text Content */}
-      <section className="w-1/2 space-y-6 ml-[100px] ">
-        <h1 className="text-[65px] font-bold text-gray-900 leading-tight mt-[50px]">
+      <section className="w-1/2 space-y-6 ml-[12px] ">
+        <h1 className="text-[65px] font-gt-display font-extrabold tracking-tight text-gray-900 leading-tight">
           Capture, Plan, <br /> and Share Your <br /> Adventures!
         </h1>
         <div className="text-[27px] text-gray-700 flex items-center ">
@@ -16,16 +16,16 @@ export default function Page() {
         </div>
 
         {/* Buttons */}
-        <div className="flex space-x-4">
+        <div className="flex space-x-6">
           <Link
             href="/journal"
-            className="bg-black text-white px-6 py-3 rounded-[25px] font-semibold hover:bg-gray-900"
+            className="bg-black text-white px-6 py-3 rounded-[20px] font-semibold hover:opacity-80"
           >
             Explore Journals
           </Link>
           <Link
             href="/itinerary/create"
-            className="border-[2px] border-black text-black px-6 py-3 rounded-[25px] font-semibold hover:bg-gray-100"
+            className="border-[2px] border-black text-black px-6 py-3 rounded-[20px] font-semibold hover:bg-blue-100"
           >
             Create Itinerary
           </Link>
@@ -39,7 +39,7 @@ export default function Page() {
           alt="Travel Stamps"
           width={700}
           height={500}
-          className="max-w-none -mr-[250px] mt-[100px]"
+          className="max-w-none -mr-[210px]"
         />
       </section>
     </main>
