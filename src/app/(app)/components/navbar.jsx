@@ -45,7 +45,7 @@ export default function Navbar({ isLogin }) {
       ) : (
         <div className="solid flex items-center space-x-6 mr-12">
           <Link
-            href="/journal"
+            href="/journal/create"
             className="border-[1.5px] border-black text-black px-6 py-3 rounded-[20px] font-medium hover:bg-blue-100"
           >
             Write Journal

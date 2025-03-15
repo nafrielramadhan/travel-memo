@@ -26,6 +26,7 @@ model Session {
   user User @relation(fields: [userId], references: [id])
 }
 
+// SEMUA WAJIB ADA!
 model Journal {
   id String @id @default(cuid())
   title String
@@ -36,8 +37,8 @@ model Journal {
   endDate DateTime
   createdAt DateTime @default(now())
   isDeleted Boolean @default(false)
-  totalExpense Decimal? // bener nggak ya decimal
-  image String?
+  totalExpense Decimal // bener nggak ya decimal
+  image String
   
   // relation
   authorId String
@@ -55,8 +56,8 @@ model Itinerary {
   endDate DateTime
   createdAt DateTime @default(now())
   isDeleted Boolean @default(false)
-  totalBudget Decimal? // bener nggak ya decimal
-  image String?
+  totalBudget Decimal // bener nggak ya decimal
+  image String
   
   // relation
   authorId String
