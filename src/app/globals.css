@@ -2,35 +2,131 @@
 
 @tailwind utilities;
 
-input {
-  @apply border p-2 rounded-lg border-slate-300 shadow-sm w-full;
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --textColor: black;
+  --softBg: #f0f0f0;
+  --softTextColor: #626262;
 }
 
-button {
+.font-reddit-mono {
+  font-family: "Reddit Mono", monospace;
+}
+
+.red-hat {
+  font-family: "Red Hat Text", monospace;
+}
+
+/* ✅ Reset input and select */
+input,
+textarea {
+  all: unset !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+select {
+  @apply w-full cursor-pointer rounded-lg  py-2 pr-8 pl-3 text-left text-gray-900 
+         outline-1 outline-gray-300 focus:outline-1 focus:outline-indigo-400 sm:text-sm 
+         appearance-none shadow-sm;
+}
+
+.normalInput {
+  @apply w-full cursor-pointer rounded-lg  py-2 pr-3 pl-3 text-left text-gray-900 
+         outline-1 outline-gray-300 focus:outline-1 focus:outline-indigo-400 sm:text-sm 
+         appearance-none shadow-sm;
+}
+
+.normalButton {
   @apply bg-black p-2 rounded-lg text-white shadow-sm w-full hover:opacity-75;
 }
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-} */
-
-/* @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.ql-container {
+  font-size: 20px !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.quill > .ql-container > .ql-editor.ql-blank::before {
+  color: #b3b3b1;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
+/* Batas Font ----------------- */
+
+@font-face {
+  font-family: "GT Super Display";
+  src: url("/fonts/GT-Super-Display-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Super Display";
+  src: url("/fonts/GT-Super-Display-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Super Display";
+  src: url("/fonts/GT-Super-Display-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Super Display";
+  src: url("/fonts/GT-Super-Display-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Super Display";
+  src: url("/fonts/GT-Super-Display-Super.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Super Text";
+  src: url("/fonts/GT-Super-Text-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Super Text";
+  src: url("/fonts/GT-Super-Text-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Super Text";
+  src: url("/fonts/GT-Super-Text-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Super Text";
+  src: url("/fonts/GT-Super-Text-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Super Text";
+  src: url("/fonts/GT-Super-Text-Book.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* ✅ Hanya gunakan untuk elemen tertentu */
+.font-gt-display {
+  font-family: "GT Super Display", serif !important;
+}
+
+.font-gt-text {
+  font-family: "GT Super Text", serif !important;
+}

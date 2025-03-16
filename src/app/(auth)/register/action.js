@@ -2,7 +2,7 @@
 
 // import { avatarBaseURL } from "@/constants/avatar-url";
 import { prisma } from "@/utils/prisma";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcrypt";
 import { redirect } from "next/navigation";
 
 export async function registerAction(_, formData) {
@@ -13,7 +13,7 @@ export async function registerAction(_, formData) {
   if (!name || !email || !password) {
     return {
       success: false,
-      message: "Please fill in all the fields!",
+      message: "All fields are required!",
     };
   }
 
@@ -26,7 +26,7 @@ export async function registerAction(_, formData) {
   if (existingUser) {
     return {
       success: false,
-      message: "Email already used!",
+      message: "User not found!",
     };
   }
 
@@ -38,7 +38,6 @@ export async function registerAction(_, formData) {
       name,
       email,
       password: hashedPassword,
-      avatarUrl,
     },
   });
 
