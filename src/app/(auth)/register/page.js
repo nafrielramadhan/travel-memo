@@ -11,28 +11,32 @@ export default function Page() {
   return (
     <div className="w-full h-screen flex justify-center items-center">
       <div className="p-8 rounded-xl border">
-        <h1 className="font-semibold text-lg text-slate-600 mb-4">
-          Create an account
+        <h1 className="font-bold text-lg">
+          Hi! welcome to{" "}
+          <span className="font-reddit-mono text-slate-900 font-light">
+            Travel Memo
+          </span>
         </h1>
-        <form className="space-y-4" action={formAction}>
+        <p className="text-sm text-slate-600 mt-4 mb-2">Create an account!</p>
+        <form className="space-y-2" action={formAction}>
+          <div>Email</div>
           <Input
-            label="Email"
             type="email"
             name="email"
             variant="underlined"
             placeholder="Enter your email"
             className="normalInput min-w-64"
           />
+          <div>Your name</div>
           <Input
-            label="Name"
             type="text"
             name="name"
             variant="underlined"
             placeholder="Enter your name"
             className="normalInput min-w-64"
           />
+          <div>Password</div>
           <Input
-            label="Password"
             type="password"
             name="password"
             variant="underlined"
@@ -40,7 +44,7 @@ export default function Page() {
             className="normalInput min-w-64"
           />
           <Button
-            className="normalButton w-full bg-cyan-700 text-white font-semibold"
+            className="normalButton w-full bg-cyan-700 text-white font-semibold mt-1"
             radius="lg"
             type="submit"
             isDisabled={pending}

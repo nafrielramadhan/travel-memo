@@ -133,7 +133,7 @@ export const EditJournalForm = ({ journal }) => {
         <input name="id" defaultValue={journal.id} hidden readOnly />
         <div className={`${styles.container} space-y-5`}>
           {/* Title */}
-          <Input
+          <input
             defaultValue={journal.title}
             type="text"
             name="title"
@@ -184,14 +184,14 @@ export const EditJournalForm = ({ journal }) => {
           <div className="space-y-2">
             <div className="font-bold ">Start and End Date of Your Trip</div>
             <div className="flex space-x-4">
-              <Input
+              <input
                 type="date"
                 name="startDate"
                 defaultValue={startDate}
                 placeholder="Start Date"
                 className="normalInput"
               />
-              <Input
+              <input
                 type="date"
                 name="endDate"
                 defaultValue={endDate}
@@ -209,7 +209,7 @@ export const EditJournalForm = ({ journal }) => {
             <div className="font-bold">Journal Cover</div>
             <label className="normalButton  !rounded-lg text-white text-[15px] inline-block cursor-pointer !w-fit">
               <Plus size={20} />
-              <Input
+              <input
                 type="file"
                 name="image"
                 className="hidden"
@@ -250,7 +250,7 @@ export const EditJournalForm = ({ journal }) => {
           {/* Expense */}
           <div className="space-y-2">
             <div className="font-bold">Total Expense for this trip?</div>
-            <Input
+            <input
               defaultValue={journal.totalExpense}
               type="number"
               name="totalExpense"

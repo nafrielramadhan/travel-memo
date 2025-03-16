@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Input, Textarea } from "@heroui/react";
+import { Button, Input } from "@heroui/react";
 import { useActionState, useState, useEffect } from "react";
 import { createJournalAction } from "./action.js";
 import { redirect } from "next/navigation";
@@ -93,11 +93,11 @@ export default function Page() {
       <form className="flex flex-col space-y-4" action={formAction}>
         <div className={`${styles.container} space-y-5`}>
           {/* Title */}
-          <Input
+          <input
             type="text"
             name="title"
             placeholder="Title"
-            className={`${styles.input} text-[50px] font-gt-display font-semibold tracking-normal text-gray-900 leading-tight md-2`}
+            className={`${styles.input} text-[45px] font-gt-display font-semibold tracking-normal text-gray-900 leading-tight md-2`}
           />
 
           {/* Destinations */}
@@ -141,13 +141,13 @@ export default function Page() {
           <div className="space-y-2">
             <div className="font-bold ">Start and End Date of Your Trip</div>
             <div className="flex space-x-4">
-              <Input
+              <input
                 type="date"
                 name="startDate"
                 placeholder="Start Date"
                 className="normalInput"
               />
-              <Input
+              <input
                 type="date"
                 name="endDate"
                 placeholder="End Date"
@@ -209,7 +209,7 @@ export default function Page() {
           {/* Expense */}
           <div className="space-y-2">
             <div className="font-bold">Total Expense for this trip?</div>
-            <Input
+            <input
               type="number"
               name="totalExpense"
               placeholder="US Dollars"
