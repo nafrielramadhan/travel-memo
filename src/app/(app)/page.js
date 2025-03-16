@@ -23,12 +23,12 @@ export default function Page() {
           >
             Explore Journals
           </Link>
-          <Link
+          {/* <Link
             href="/itinerary/create"
             className="border-[2px] border-black text-black px-6 py-3 rounded-[20px] font-semibold hover:bg-blue-100"
           >
             Create Itinerary
-          </Link>
+          </Link> */}
         </div>
       </section>
 

@@ -18,15 +18,6 @@
   font-family: "Red Hat Text", monospace;
 }
 
-/* ✅ Reset input and select */
-input,
-textarea {
-  all: unset !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-  border: none;
-}
-
 select {
   @apply w-full cursor-pointer rounded-lg  py-2 pr-8 pl-3 text-left text-gray-900 
          outline-1 outline-gray-300 focus:outline-1 focus:outline-indigo-400 sm:text-sm 
