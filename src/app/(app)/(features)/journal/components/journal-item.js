@@ -9,7 +9,7 @@ import Link from "next/link";
 const stripHtml = (html) => html.replace(/<[^>]+>/g, "");
 
 export const JournalItem = ({ id, image, title, content, name, createdAt }) => {
-  const maxLength = 100; // Batas panjang teks
+  const maxLength = 104; // Batas panjang teks
   const cleanContent = stripHtml(content);
   const shortContent =
     cleanContent.length > maxLength
@@ -19,7 +19,7 @@ export const JournalItem = ({ id, image, title, content, name, createdAt }) => {
   return (
     <main>
       <Link href={`/journal/${id}`}>
-        <div className="block h-[380px] rounded-[40px] overflow-hidden shadow-lg hover:shadow-xl transition">
+        <div className="block h-[407px] border-1 border-black rounded-[25px] overflow-hidden shadow-sm hover:shadow-xl transition">
           {/* Gambar cover harus pake VPN & Image kecil */}
           <Image
             src={`https://pub-af8be0bea17b4d2c8b04929ebf16bac7.r2.dev/travel-memo/${id}/${image}`}
@@ -32,22 +32,24 @@ export const JournalItem = ({ id, image, title, content, name, createdAt }) => {
           />
 
           {/* Bagian bawah image */}
-          <div className="p-4 bg-white">
-            <h2 className="text-lg font-bold">{title}</h2>
-            <p className="text-gray-500 text-sm">{shortContent}</p>
+          <div className="px-5 py-2 bg-white">
+            <h2 className="font-gt-display font-semibold text-[22px] tracking-tight mb-1">
+              {title}
+            </h2>
+            <p className="text-gray-500 text-sm mb-1">{shortContent}</p>
 
             {/* Harus diperpendek nih content nya! */}
             {/* Bagian publisher + tanggal */}
-            <div className="flex items-center gap-2 mt-2">
+            <div className="flex items-center gap-2 mt-3 mb-4">
               <Avatar name={name} variant="beam" size={20} />
-              <span className="text-sm">
+              <span className="text-gray-500 text-sm">
                 {name
                   .split(" ") // Pisah berdasarkan spasi
                   .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Kapitalisasi setiap kata
                   .join(" ")}{" "}
               </span>
 
-              <span className="text-gray-400 text-sm ml-auto">
+              <span className="text-gray-500 text-sm ml-auto">
                 {moment(createdAt).format("DD MMM YYYY")}
               </span>
             </div>

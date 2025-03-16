@@ -56,7 +56,7 @@ export default function Page() {
           <hr className="my-4" />
           <OauthGoogleButton />
           <p className="text-sm mt-8 text-center">
-            Don't have an account?{" "}
+            Dont have an account?{" "}
             <Link href="/register" className="font-semibold hover:underline">
               Sign up
             </Link>

@@ -70,24 +70,3 @@ export async function GET(request) {
 
   redirect("/journal");
 }
-
-/**
- * Flow after redirected to /auth/google/callback
- *
- * 1. Get code from url - searchParams
- * 2. Verify the code with codeVerifier from cookie
- * 3. Get accessToken
- */
-
-/**
- * Flow for Continue with oauth
- *
- * 1. Find user in database
- * 2. Create user if user not in db
- *    2.1. Create new session for new user
- *    2.2. Set session to cookie
- *    2.3. Redirect to home
- * 3. If user already in db,create new session for the user
- *    3.1. Set session to cookie
- *    3.2. Redirect to home
- */

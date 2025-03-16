@@ -18,29 +18,24 @@
   font-family: "Red Hat Text", monospace;
 }
 
-/* input {
-  @apply border p-2 rounded-lg border-slate-300 shadow-sm w-full;
-} */
-
 /* ✅ Reset input and select */
 input,
-select,
 textarea {
   all: unset !important;
   width: 100% !important;
   box-sizing: border-box !important;
 }
 
-/* select {
-  @apply border p-2 rounded-lg border-slate-300 shadow-sm w-full;
-} */
-/* 
-button {
-  @apply bg-black p-2 rounded-lg text-white shadow-sm w-full hover:opacity-75;
-} */
+select {
+  @apply w-full cursor-pointer rounded-lg  py-2 pr-8 pl-3 text-left text-gray-900 
+         outline-1 outline-gray-300 focus:outline-1 focus:outline-indigo-400 sm:text-sm 
+         appearance-none shadow-sm;
+}
 
 .normalInput {
-  @apply border p-2 rounded-lg border-slate-300 shadow-sm w-full;
+  @apply w-full cursor-pointer rounded-lg  py-2 pr-3 pl-3 text-left text-gray-900 
+         outline-1 outline-gray-300 focus:outline-1 focus:outline-indigo-400 sm:text-sm 
+         appearance-none shadow-sm;
 }
 
 .normalButton {
