@@ -26,7 +26,7 @@ export async function registerAction(_, formData) {
   if (existingUser) {
     return {
       success: false,
-      message: "User not found!",
+      message: "User already registered!",
     };
   }
 

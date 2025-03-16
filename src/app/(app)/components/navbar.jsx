@@ -50,12 +50,12 @@ export default function Navbar({ isLogin }) {
           >
             Write Journal
           </Link>
-          <Link
+          {/* <Link
             href="/itinerary"
             className="border-[1.5px] border-black text-black px-6 py-3 rounded-[20px] font-medium hover:bg-blue-100"
           >
             Plan a Trip
-          </Link>
+          </Link> */}
           <form action={formAction}>
             <Button
               type="submit"
