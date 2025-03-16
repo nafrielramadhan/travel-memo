@@ -221,14 +221,10 @@ export const EditJournalForm = ({ journal }) => {
             {/* ✅ Tampilkan preview gambar setelah upload */}
             {imagePreview && (
               <div className="mt-2">
-                <Image
+                <img
                   src={imagePreview}
                   alt={journal.title}
-                  // width={300} // Sesuaikan ukuran yang optimal
-                  // height={200}
-                  fill
                   className="w-full max-w-xs h-auto rounded-lg shadow-md"
-                  priority // Meningkatkan LCP (Largest Contentful Paint)
                 />
               </div>
             )}
